@@ -1,0 +1,53 @@
+
+<div>
+
+  <h1  nz-typography>Carga de Reclamo</h1>
+</div>
+<form nz-form [formGroup]="validateForm" class="login-form" (ngSubmit)="submitForm()">
+  <nz-form-item>
+    <nz-form-control nzErrorTip="Please input your username!">
+      <nz-input-group nzPrefixIcon="user" nzSuffixIcon="user">
+        <input type="text" nz-input formControlName="userName" placeholder="Username" />
+      </nz-input-group>
+    </nz-form-control>
+  </nz-form-item>
+  <nz-form-item>
+    <nz-form-control nzErrorTip="Please input your Password!">
+      <nz-input-group nzPrefixIcon="lock">
+        <input type="password" nz-input formControlName="password" placeholder="Password" />
+      </nz-input-group>
+    </nz-form-control>
+  </nz-form-item>
+  <div nz-row class="login-form-margin">
+    <div nz-col [nzSpan]="12">
+      <label nz-checkbox formControlName="remember">
+        <span>Remember me</span>
+      </label>
+    </div>
+    <div nz-col [nzSpan]="12">
+      <a class="login-form-forgot">Forgot password</a>
+    </div>
+  </div>
+  <button nz-button class="login-form-button login-form-margin" [nzType]="'primary'">Log in</button>
+  Or
+  <a>register now!</a>
+</form>
+<br>
+<div style="width: 500px">
+  <nz-select [nzDropdownStyle]="{width:'500px'}"  ngModel="Aysa">
+    <nz-option nzValue="Aysa" nzLabel="Aysa"></nz-option>
+    <nz-option nzValue="Empresa 1" nzLabel="Empresa 1"></nz-option>
+<!--    <nz-option nzValue="disabled" nzLabel="Disabled" nzDisabled></nz-option>-->
+  </nz-select>
+</div>
+
+
+<nz-form-item>
+  <nz-form-label [nzSm]="6" [nzXs]="24" nzRequired nzFor="email">Nombre de usuario</nz-form-label>
+  <nz-form-control [nzSm]="14" [nzXs]="24" nzErrorTip="The input is not valid E-mail!">
+    <input nz-input  />
+  </nz-form-control>
+</nz-form-item>
+<br>
+<button (click)="hi()" [class.circle]="cirlce"  nz-button class="login-form-button login-form-margin" [nzType]="'primary'">Paola</button>
+

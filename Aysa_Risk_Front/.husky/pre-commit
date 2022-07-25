@@ -1,0 +1,7 @@
+#!/usr/bin/env sh
+. "$(dirname -- "$0")/_/husky.sh"
+
+echo ""
+echo "Passing lint and pretty"
+npm run lint && npm run pretty
+echo "Success lint: fix and tests"

@@ -1,0 +1,67 @@
+################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/.vs
+/VW.Aysa_Risk_Back/VW.Aysa_Risk_Back/obj
+/VW.Aysa_Risk_Back/VW.Aysa_Risk_Back.Core/obj
+
+
+## ANGULAR ##
+# compiled output
+/Aysa_Risk_Front/dist
+/Aysa_Risk_Front/tmp
+/Aysa_Risk_Front/out-tsc
+# Only exists if Bazel was run
+/Aysa_Risk_Front/bazel-out
+
+# dependencies
+/Aysa_Risk_Front/node_modules
+
+# profiling files
+chrome-profiler-events*.json
+
+# IDEs and editors
+/Aysa_Risk_Front/.idea
+/Aysa_Risk_Front/.vscode
+.project
+.classpath
+.c9/
+*.launch
+.settings/
+*.sublime-workspace
+
+# IDE - VSCode
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+.history/*
+
+# misc
+/.sass-cache
+/connect.lock
+/coverage
+/libpeerconnection.log
+npm-debug.log
+yarn-error.log
+testem.log
+/typings
+
+# System Files
+.DS_Store
+Thumbs.db
+/Aysa_Risk_Back/Aysa_Risk_Back/bin/Debug/net6.0
+/Aysa_Risk_Back/Aysa_Risk_Back/bin/Release/net6.0
+
+/VW.SelfForms/Aysa_Risk_Business_Logic/bin/Debug/net5.0
+/Aysa_Risk_Back/Aysa_Risk_Business_Logic/bin/Release/net5.0
+
+/Aysa_Risk_Back/Aysa_Risk_Data_Access/bin/Debug/net5.0
+/Aysa_Risk_Back/Aysa_Risk_Data_Access/bin/Release/net5.0
+/Aysa_Risk_Back/Aysa_Risk_Back/.config
+
+/Aysa_Risk_Back/.vs/*
+
+/.idea

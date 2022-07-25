@@ -1,0 +1,39 @@
+@import '../colors';
+
+.ant-alert-warning {
+  background-color: @warning-color;
+  border: 1px solid @warning-color;
+  color: white;
+}
+
+nz-alert {
+  button.ant-alert-close-icon {
+    text-align: end;
+  }
+  .ant-alert {
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+  }
+}
+.ant-alert-success{
+  background-color: @success-color;
+  border: 1px solid @success-color;
+  .ant-alert-message
+  {
+    color: white !important;
+  }
+  button.ant-alert-close-icon i{
+    color: white !important;
+  }
+}
+.ant-alert-error {
+  background-color: @error-color;
+  border: 1px solid @error-color;
+  .ant-alert-message
+  {
+    color: white !important;
+  }
+  button.ant-alert-close-icon i{
+    color: white !important;
+  }
+}

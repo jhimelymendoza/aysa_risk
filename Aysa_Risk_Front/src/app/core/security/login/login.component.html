@@ -1,0 +1,66 @@
+<div class="container" nz-row>
+  <div class="img" nz-col nzSpan="12">
+    <h1>{{ 'LOGIN.WELCOME' | translate }}</h1>
+    <span>{{ 'LOGIN.KNOW_MORE' | translate }}</span>
+  </div>
+  <div class="login" nz-col nzSpan="12">
+    <nz-alert *ngIf="showAlert" [nzType]="alert.type" nzCloseable [nzMessage]="alert.message"></nz-alert>
+    <div class="logo" nz-row nzJustify="center" nzAlign="top">
+      <div nz-col nzSpan="12" style="text-align: center">
+        <img src="assets/image/login/logo.png" width="121" height="59" alt="logo" />
+      </div>
+    </div>
+
+    <div nz-row nzJustify="center" nzAlign="top">
+      <div nz-col nzSpan="12">
+        <form nz-form nzLayout="vertical" [formGroup]="validateForm" class="login-form" (ngSubmit)="submitForm()">
+          <div class="enterprise" nz-row nzJustify="center">
+            <nz-form-item>
+              <nz-form-label nzFor="enterprises">{{ 'LOGIN.CHOSE_ENTERPRISE' | translate }}</nz-form-label>
+              <nz-form-control   nzHasFeedback  [nzValidateStatus]="loadingEnterprise?'validating':validateForm.controls['enterprise']" [nzErrorTip]="'COMMON.REQUIRED_FIELD' | translate">
+                <nz-select
+                  [nzDisabled]="loadingEnterprise"
+                  formControlName="enterprise"
+                  [nzPlaceHolder]="'COMMON.SELECT' | translate"
+                  [nzDropdownStyle]="{ width: '172px' }">
+                  <nz-option *ngFor="let e of enterprise$ | async" [nzValue]="e.id" [nzLabel]="e.label"></nz-option>
+                </nz-select>
+              </nz-form-control>
+            </nz-form-item>
+          </div>
+
+          <nz-form-item>
+            <nz-form-control [nzErrorTip]="'COMMON.REQUIRED_FIELD' | translate">
+              <nz-form-label class="medium" nzFor="userName">{{ 'LOGIN.USERNAME' | translate }}</nz-form-label>
+              <nz-input-group>
+                <input type="text" nz-input formControlName="userName" placeholder="Username" />
+              </nz-input-group>
+            </nz-form-control>
+          </nz-form-item>
+          <nz-form-item style="margin-bottom: 10px">
+            <nz-form-control [nzErrorTip]="'COMMON.REQUIRED_FIELD' | translate">
+              <nz-form-label class="medium" style="font-size: 18px" nzFor="password">{{
+                'LOGIN.PASSWORD' | translate
+              }}</nz-form-label>
+              <nz-input-group nzSuffixIcon="icons:not-eye">
+                <input type="password" nz-input formControlName="password" placeholder="*******" />
+              </nz-input-group>
+            </nz-form-control>
+          </nz-form-item>
+          <div nz-row class="remember">
+            <div nz-col [nzSpan]="12">
+              <label nz-checkbox formControlName="remember">
+                <span>{{ 'LOGIN.REMEMBER_USER' | translate }}</span>
+              </label>
+            </div>
+          </div>
+          <div style="text-align: center">
+            <button [nzLoading]="isLoading" nz-button class="login-form-button login-form-margin" [nzType]="'primary'">
+              {{ 'LOGIN.SIGN_IN' | translate }}
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

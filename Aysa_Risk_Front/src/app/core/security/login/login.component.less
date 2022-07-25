@@ -1,0 +1,69 @@
+
+@import '../../../../styles/colors';
+div.container {
+  width: 100vw;
+  height: 100vh;
+  div.img {
+    background-image: url(/assets/image/login/img.png);
+    background-size: cover;
+    background-position: center;
+    box-shadow: inset 0 0 99999px 500px rgba(33, 31, 147, 0.56);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+    h1 {
+      font-weight: 700;
+      font-size: 50px;
+      line-height: 101.7%;
+      text-align: center;
+      color: white;
+      margin-top: 133px;
+      width: 381px;
+      margin-bottom: 6px;
+    }
+    span {
+      text-align: center;
+    }
+  }
+  div.login {
+    nz-form-label.medium.ant-form-item-label {
+      padding: 0 0 7px;
+      line-height: 23px;
+      > label {
+        font-size: 18px;
+
+      }
+    }
+
+    .enterprise {
+      nz-form-item {
+        margin-bottom: 46px;
+        width: 172px;
+        nz-form-label {
+          text-align: center;
+          font-size: 14px !important;
+          line-height: 18px;
+        }
+      }
+    }
+    .logo {
+      margin-bottom: 105px;
+      > div {
+        text-align: center;
+        margin-top: 28px;
+      }
+    }
+
+    .remember{
+      margin-bottom: 45px;
+      label span{
+        color: @secondary-color
+      }
+
+    }
+    button{
+      width: 238px;
+    }
+  }
+}

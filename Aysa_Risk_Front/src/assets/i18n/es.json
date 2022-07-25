@@ -1,0 +1,18 @@
+{
+  "COMMON": {
+    "REQUIRED_FIELD": "Campo requerido",
+    "SELECT": "Seleccionar"
+  },
+
+  "LOGIN": {
+    "WELCOME": "!Hola Te damos la bienvenida",
+    "KNOW_MORE": "Conoce más sobre Risk Cloud",
+    "CHOSE_ENTERPRISE": "Seleccionar empresa",
+    "USERNAME": "Nombre de usuario",
+    "PASSWORD": "Contraseña",
+    "REMEMBER_USER": "Recordar usuario",
+    "SIGN_IN": "Iniciar sesión",
+    "ENTERPRISE_LOAD_ERROR": "No se cargaron correctamente las empresas",
+    "CREDENTIAL_INVALID": "Usuario o contraseña incorrecta"
+  }
+}
