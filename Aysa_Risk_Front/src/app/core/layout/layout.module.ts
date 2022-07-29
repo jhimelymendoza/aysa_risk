@@ -10,6 +10,12 @@ import { es_ES, NZ_I18N } from 'ng-zorro-antd/i18n';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { NzIconModule } from 'ng-zorro-antd/icon';
+import { NzGridModule } from 'ng-zorro-antd/grid';
+import { NzInputModule } from 'ng-zorro-antd/input';
+import { NzButtonModule } from 'ng-zorro-antd/button';
+import { FlexLayoutModule } from '@angular/flex-layout';
+import { NzBadgeModule } from 'ng-zorro-antd/badge';
+import { TranslateModule } from '@ngx-translate/core';
 
 @NgModule({
   imports: [
@@ -19,7 +25,13 @@ import { NzIconModule } from 'ng-zorro-antd/icon';
     ReactiveFormsModule,
     NzLayoutModule,
     NzMenuModule,
-    NzIconModule
+    NzIconModule,
+    NzGridModule,
+    NzInputModule,
+    NzButtonModule,
+    FlexLayoutModule,
+    NzBadgeModule,
+    TranslateModule
   ],
   declarations: [LayoutComponent],
   exports: [LayoutComponent],

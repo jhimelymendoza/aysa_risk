@@ -7,4 +7,7 @@ import { Component } from '@angular/core';
 })
 export class LayoutComponent {
   isCollapsed = false;
+
+  user = 'Johan';
+  rol = 'Analista de riesgo';
 }

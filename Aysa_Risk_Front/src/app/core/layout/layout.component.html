@@ -1,13 +1,14 @@
 <nz-layout class="app-layout">
-  <nz-sider class="menu-sidebar"
-            nzCollapsible
-            nzWidth="256px"
-            nzBreakpoint="md"
-            [(nzCollapsed)]="isCollapsed"
-            [nzTrigger]="null">
+  <nz-sider
+    class="menu-sidebar"
+    nzCollapsible
+    nzWidth="256px"
+    nzBreakpoint="md"
+    [(nzCollapsed)]="isCollapsed"
+    [nzTrigger]="null">
     <div class="sidebar-logo">
       <a href="https://ng.ant.design/" target="_blank">
-        <img src="https://ng.ant.design/assets/img/logo.svg" alt="logo">
+        <img src="https://ng.ant.design/assets/img/logo.svg" alt="logo" />
         <h1>Ant Design Of Angular</h1>
       </a>
     </div>
@@ -37,11 +38,33 @@
   <nz-layout>
     <nz-header>
       <div class="app-header">
-        <span class="header-trigger" (click)="isCollapsed = !isCollapsed">
-            <i class="trigger"
-               nz-icon
-               [nzType]="isCollapsed ? 'menu-unfold' : 'menu-fold'"
-            ></i>
+        <div fxLayout="row" style="height: inherit; width: 100%">
+          <div fxFlex="50%" fxLayoutAlign="start center" class="search-box">
+            <nz-input-group style="width: 264px" nzAddOnAfterIcon="search">
+              <input style="height: 32px" type="text" nz-input [placeholder]="'COMMON.KEYWORD_SEARCH' | translate"  />
+            </nz-input-group>
+          </div>
+          <div fxFlex="50%" fxLayoutAlign="end center" fxLayoutGap="5px">
+            <nz-badge [nzCount]="5">
+              <button nz-button nzType="primary" nzShape="circle">
+                <i nz-icon nzType="icons:bell"></i>
+              </button>
+            </nz-badge>
+
+            <button style="margin-right: 24px; margin-left: 11px" nz-button nzType="primary" nzShape="circle">
+              <i nz-icon nzType="icons:calendar"></i>
+            </button>
+            <img style="margin-right: 5px" src="assets/image/nav-bar/avatar.png" alt="avatar" height="45" width="45" />
+
+            <div class="avatar" fxLayout="column">
+              <strong>{{ user }}</strong>
+              <span> {{ rol }}</span>
+            </div>
+            <i nz-icon nzType="down" nzTheme="outline"></i>
+          </div>
+        </div>
+        <span class="header-trigger" [class.closed]="isCollapsed" (click)="isCollapsed = !isCollapsed">
+          <i nz-icon nzType="icons:arrow-left"></i>
         </span>
       </div>
     </nz-header>
