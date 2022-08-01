@@ -15,13 +15,13 @@ export class EnterpriseService {
         map((response) => {
           const enterpriseResponse = new ResponseBase<Array<OptionSelect<number>>>(response, OptionSelect);
           if (enterpriseResponse.AnyError) {
-            throw 'faild load enterprise';
+            throw 'failed load enterprise';
           }
           return enterpriseResponse;
         })
       );
     } catch (error) {
-      throw 'faild load enterprise';
+      throw 'failed load enterprise';
     }
   }
 }
