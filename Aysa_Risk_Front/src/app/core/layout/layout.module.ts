@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 
 import { LayoutRoutingModule } from './layout-routing.module';
 
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { LayoutComponent } from './layout.component';
 import { NzLayoutModule } from 'ng-zorro-antd/layout';
 import { NzMenuModule } from 'ng-zorro-antd/menu';
@@ -16,6 +16,7 @@ import { NzButtonModule } from 'ng-zorro-antd/button';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { NzBadgeModule } from 'ng-zorro-antd/badge';
 import { TranslateModule } from '@ngx-translate/core';
+import { NzSelectModule } from 'ng-zorro-antd/select';
 
 @NgModule({
   imports: [
@@ -23,6 +24,7 @@ import { TranslateModule } from '@ngx-translate/core';
     RouterModule,
     LayoutRoutingModule,
     ReactiveFormsModule,
+    FormsModule,
     NzLayoutModule,
     NzMenuModule,
     NzIconModule,
@@ -31,7 +33,8 @@ import { TranslateModule } from '@ngx-translate/core';
     NzButtonModule,
     FlexLayoutModule,
     NzBadgeModule,
-    TranslateModule
+    TranslateModule,
+    NzSelectModule
   ],
   declarations: [LayoutComponent],
   exports: [LayoutComponent],

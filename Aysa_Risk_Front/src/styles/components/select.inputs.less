@@ -12,7 +12,7 @@
 
 .ant-select-item {
   color: @secondary-color;
-  &.ant-select-item-option-disabled{
+  &.ant-select-item-option-disabled {
     color: rgba(0, 0, 0, 0.25);
   }
 }
@@ -21,4 +21,36 @@
   color: @secondary-color;
   font-weight: normal;
   background-color: #f0f9ff;
+}
+
+.side-bar-select {
+  padding: 20px 0;
+  .ant-select:not(.ant-select-customize-input) .ant-select-selector {
+    background-color: @primary-color;
+    width: 232px;
+    height: 40px;
+    padding-top: 5px;
+    color: @normal-color;
+    text-align: start;
+    transition: all 0.250s;
+  }
+
+  &.side-bar-select-small {
+    .ant-select:not(.ant-select-customize-input) .ant-select-selector {
+      width: 40px;
+    }
+    nz-select {
+      .ant-select-item-option{
+        min-height: 40px;
+      }
+    }
+  }
+
+  .ant-select-single.ant-select-open .ant-select-selection-item {
+    color: @normal-color;
+  }
+
+  nz-select-arrow {
+    color: @normal-color;
+  }
 }
