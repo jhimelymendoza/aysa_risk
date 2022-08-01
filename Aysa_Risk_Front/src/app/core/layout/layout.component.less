@@ -7,14 +7,24 @@
 }
 
 .app-layout {
-  height: 100vh;
+  height: auto;
 }
 
 .menu-sidebar {
   position: relative;
   z-index: 10;
   min-height: 100vh;
-  box-shadow: 2px 0 6px rgba(0, 21, 41, 0.35);
+  box-shadow: none;
+
+  .object {
+    padding: 10px 0;
+    &:host::ng-deep nz-select {
+      nz-select-top-control {
+        width: 232px;
+        height: 40px;
+      }
+    }
+  }
 }
 
 .header-trigger {
@@ -26,7 +36,7 @@
 
   position: relative;
   bottom: 34px;
-  right: 43px;
+  right: 37px;
 
   i {
     transition: transform 0.3s;
@@ -46,25 +56,24 @@
   padding-left: 24px;
   overflow: hidden;
   line-height: 64px;
-  background: #001529;
+  background: @normal-color;
   transition: all 0.3s;
-}
+  color: black;
+  text-align: center;
+  &.is_collapse {
+    padding-left: 0;
+    img {
+      height: auto;
+      width: 43px;
+    }
+  }
 
-.sidebar-logo img {
-  display: inline-block;
-  height: 32px;
-  width: 32px;
-  vertical-align: middle;
-}
-
-.sidebar-logo h1 {
-  display: inline-block;
-  margin: 0 0 0 20px;
-  color: #fff;
-  font-weight: 600;
-  font-size: 14px;
-  font-family: Avenir, Helvetica Neue, Arial, Helvetica, sans-serif;
-  vertical-align: middle;
+  img {
+    display: inline-block;
+    height: 59px;
+    width: 121px;
+    vertical-align: middle;
+  }
 }
 
 nz-header {
@@ -92,6 +101,10 @@ nz-header {
     background: @icon-circle;
     border-color: @icon-circle;
   }
+  button[nzShape='circle'].header-trigger {
+    background: @primary-color;
+    border-color: @primary-color;
+  }
 
   .avatar {
     line-height: 20px;
@@ -108,4 +121,29 @@ nz-content {
   padding: 24px;
   background: #fff;
   height: 100%;
+}
+
+.menu {
+  li {
+    &.ant-menu-item-selected {
+      background-color: @normal-color;
+      color: @primary-color;
+      i {
+        color: @primary-color;
+      }
+    }
+    i {
+      font-size: 20px;
+      color: gray;
+    }
+    &.setting{
+      margin-top: calc(100% - 98px);
+      margin-bottom: 20px;
+      transition: none;
+    }
+
+    &.setting.is-collapse {
+      margin-top: calc(100% + 44px);
+    }
+  }
 }

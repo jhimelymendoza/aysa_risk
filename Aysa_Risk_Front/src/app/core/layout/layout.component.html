@@ -6,32 +6,49 @@
     nzBreakpoint="md"
     [(nzCollapsed)]="isCollapsed"
     [nzTrigger]="null">
-    <div class="sidebar-logo">
-      <a href="https://ng.ant.design/" target="_blank">
-        <img src="https://ng.ant.design/assets/img/logo.svg" alt="logo" />
-        <h1>Ant Design Of Angular</h1>
-      </a>
+    <div class="sidebar-logo" [class.is_collapse]="isCollapsed">
+      <img [hidden]="isCollapsed" src="assets/image/logo/logo.png" alt="logo" />
+      <img [hidden]="!isCollapsed" height="auto" width="43" src="assets/image/logo/logo-xs.svg" alt="logo-xs" />
     </div>
-    <ul nz-menu nzTheme="dark" nzMode="inline" [nzInlineCollapsed]="isCollapsed">
-      <li nz-submenu nzOpen nzTitle="Dashboard" nzIcon="dashboard">
-        <ul>
-          <li nz-menu-item nzMatchRouter>
-            <a routerLink="/welcome">Welcome</a>
-          </li>
-          <li nz-menu-item nzMatchRouter>
-            <a>Monitor</a>
-          </li>
-          <li nz-menu-item nzMatchRouter>
-            <a>Workplace</a>
-          </li>
-        </ul>
+    <div class="side-bar-select" [class.side-bar-select-small]="isCollapsed" style="text-align: center">
+      <nz-select ngModel="Siniestros" [nzDropdownStyle]="{ border: '2px solid #4490fa' }">
+        <nz-option nzCustomContent nzLabel="Siniestros" nzValue="Siniestros"><div>Siniestros</div></nz-option>
+        <nz-option nzCustomContent nzLabel="Polizas" nzValue="Polizas"> <div>Polizas</div></nz-option>
+        <nz-option nzCustomContent nzLabel="Parametrización" nzValue="Parametrización">
+          <div>Parametrización</div></nz-option
+        >
+        <nz-option nzCustomContent nzLabel="Seguridad" nzValue="Seguridad"> <div>Seguridad</div></nz-option>
+      </nz-select>
+    </div>
+    <ul class="menu" nz-menu nzMode="inline" [nzInlineCollapsed]="isCollapsed">
+      <li routerLink="/"  nz-menu-item nzSelected>
+        <i nz-icon nzType="icons:home"></i>
+        <span>Inicio</span>
       </li>
-      <li nz-submenu nzOpen nzTitle="Form" nzIcon="form">
-        <ul>
-          <li nz-menu-item nzMatchRouter>
-            <a>Basic Form</a>
-          </li>
-        </ul>
+      <li nz-menu-item>
+        <i nz-icon nzType="icons:users"></i>
+        <span>Reclamos de Terceros</span>
+      </li>
+      <li nz-menu-item>
+        <i nz-icon nzType="icons:truck"></i>
+        <span>Automotores</span>
+      </li>
+      <li nz-menu-item>
+        <i nz-icon nzType="icons:danger"></i>
+        <span>Reclamos de Terceros</span>
+      </li>
+      <li nz-menu-item>
+        <i nz-icon nzType="icons:building"></i>
+        <span>Daños a Instalaciones</span>
+      </li>
+      <li nz-menu-item>
+        <i nz-icon nzType="icons:atr"></i>
+        <span>Daños Patrimoniales</span>
+      </li>
+
+      <li nz-menu-item class="setting" routerLink="administracion" nzMatchRouter [class.is-collapse]="isCollapsed">
+        <i nz-icon nzType="icons:home"></i>
+        <span>Configuración</span>
       </li>
     </ul>
   </nz-sider>
@@ -41,7 +58,7 @@
         <div fxLayout="row" style="height: inherit; width: 100%">
           <div fxFlex="50%" fxLayoutAlign="start center" class="search-box">
             <nz-input-group style="width: 264px" nzAddOnAfterIcon="search">
-              <input style="height: 32px" type="text" nz-input [placeholder]="'COMMON.KEYWORD_SEARCH' | translate"  />
+              <input style="height: 32px" type="text" nz-input [placeholder]="'COMMON.KEYWORD_SEARCH' | translate" />
             </nz-input-group>
           </div>
           <div fxFlex="50%" fxLayoutAlign="end center" fxLayoutGap="5px">
@@ -63,9 +80,19 @@
             <i nz-icon nzType="down" nzTheme="outline"></i>
           </div>
         </div>
-        <span class="header-trigger" [class.closed]="isCollapsed" (click)="isCollapsed = !isCollapsed">
+        <button
+          class="header-trigger"
+          [class.closed]="isCollapsed"
+          (click)="isCollapsed = !isCollapsed"
+          nz-button
+          nzType="primary"
+          nzSize="small"
+          nzShape="circle">
           <i nz-icon nzType="icons:arrow-left"></i>
-        </span>
+        </button>
+        <!--        <span class="header-trigger" >-->
+        <!--          <i nz-icon nzType="icons:arrow-left"></i>-->
+        <!--        </span>-->
       </div>
     </nz-header>
     <nz-content>
