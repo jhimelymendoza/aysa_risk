@@ -1,7 +1,21 @@
-<p>notes-home works!</p>
+<div fxLayout="column" fxFlex="100%" class="p-20" @fadeInOut >
+    <div  fxLayout="row" fxLayoutAlign="start center" class="main-container">
+      <i nz-icon nzType="icons:notes"></i>
+      <h1>
+          {{ 'ADMINISTRATION.ADMIN_NOTES' | translate}}
+      </h1>
+    </div>
+    <div fxLayout="row" fxLayoutAlign="end center">
+        <nz-input-group style="width: 264px" nzAddOnAfterIcon="search">
+          <input style="height: 32px" type="text" nz-input [placeholder]="'COMMON.KEYWORD_SEARCH' | translate" />
+        </nz-input-group>
+        <button nz-button nzType="primary" class="btn-new"><span class="sum">+</span> Nuevo</button>
 
-<nz-card style="width:300px;">
-  <p>Card content</p>
-  <p>Card content</p>
-  <p>Card content</p>
-</nz-card>
+    </div>
+    <div fxLayout="row" fxFlex="100" fxLayoutAlign="start start" class="list-container">
+      <div fxLayout="column" fxFlex="50" fxFlex.lt-sm="100" fxLayoutAlign="start start" >
+          <aysr-item-list *ngFor="let item of menuItems"
+          [text]="item.text" ></aysr-item-list>
+      </div>
+  </div>
+</div>

@@ -1,0 +1,7 @@
+<a fxLayout="column" fxFlex="50" fxLayoutAlign="start start" >
+    <div fxLayout="row" fxFlex="100" fxLayoutAlign="start center"  style="max-width:480px; width:480px"
+    class="item-list">
+        <i nz-icon [nzType]="'icons:'+icon" *ngIf="icon"></i>
+        <span class="description" [class.icon]="icon" routerLink="{{link}}">{{ text | translate}}</span>
+    </div>
+</a>
