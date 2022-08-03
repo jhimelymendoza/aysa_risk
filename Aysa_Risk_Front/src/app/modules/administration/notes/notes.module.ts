@@ -13,6 +13,7 @@ import { NzButtonModule } from 'ng-zorro-antd/button';
 import { NzIconModule } from 'ng-zorro-antd/icon';
 import { NzInputModule } from 'ng-zorro-antd/input';
 import { NzCardModule } from 'ng-zorro-antd/card';
+import { NzBreadCrumbModule } from 'ng-zorro-antd/breadcrumb';
 
 @NgModule({
   imports: [
@@ -27,7 +28,9 @@ import { NzCardModule } from 'ng-zorro-antd/card';
     NzIconModule,
     NzInputModule,
     NzButtonModule,
-    ComponentsModule
+    NzBreadCrumbModule,
+    ComponentsModule,
+    RouterModule
   ],
   exports: [],
   declarations: [NotesHomeComponent, NotesLayoutComponent],

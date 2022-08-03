@@ -6,7 +6,10 @@ import { AdministrationLayoutComponent } from './administration-layout.component
 import { AdministrationRoutingModule } from './administration-routing.module';
 import { HomeAdministrationComponent } from './home-administration/home-administration.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
+
 import { NzIconModule } from 'ng-zorro-antd/icon';
+import { NzBreadCrumbModule } from 'ng-zorro-antd/breadcrumb';
+
 import { ComponentsModule } from './core/components/components.module';
 import { TranslateModule } from '@ngx-translate/core';
 
@@ -18,6 +21,7 @@ import { TranslateModule } from '@ngx-translate/core';
     AdministrationRoutingModule,
     FlexLayoutModule,
     NzIconModule,
+    NzBreadCrumbModule,
     ComponentsModule,
     TranslateModule
   ]
