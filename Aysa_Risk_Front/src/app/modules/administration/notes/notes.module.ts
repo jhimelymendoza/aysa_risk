@@ -4,7 +4,7 @@ import { CommonModule } from '@angular/common';
 import { TranslateModule } from '@ngx-translate/core';
 import { NotesRoutingModuleModule } from './notes-routing.module';
 import { RouterModule } from '@angular/router';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NotesHomeComponent } from './notes-home/notes-home.component';
 import { ComponentsModule } from '../core/components/components.module';
 import { FlexLayoutModule } from '@angular/flex-layout';
@@ -19,6 +19,7 @@ import { NzCardModule } from 'ng-zorro-antd/card';
     CommonModule,
     RouterModule,
     TranslateModule,
+    ReactiveFormsModule,
     NotesRoutingModuleModule,
     FormsModule,
     FlexLayoutModule,

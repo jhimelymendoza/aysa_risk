@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnDestroy } from '@angular/core';
+import { FormControl } from '@angular/forms';
+import { debounceTime, delay, distinctUntilChanged, Subject, takeUntil } from 'rxjs';
 import { fadeInOut } from 'src/app/core/animations';
 
 @Component({
@@ -7,26 +9,53 @@ import { fadeInOut } from 'src/app/core/animations';
   styleUrls: ['./notes-home.component.less'],
   animations: [fadeInOut]
 })
-export class NotesHomeComponent {
-  public menuItems = [
+export class NotesHomeComponent implements OnDestroy {
+  searchInput: FormControl = new FormControl()
+  private _unsubscribe: Subject<void> = new Subject();
+  private _menuItems = [
     {
-      text: 'ADMINISTRATION.ITEM-LIST.ADMIN_EMAIL_TEMPLATES'
+      text: 'Nota de Ofrecimiento'
     },
     {
-      text: 'ADMINISTRATION.ITEM-LIST.ADMIN_ALERTS'
+      text: 'Nota de Rechazo'
     },
     {
-      text: 'ADMINISTRATION.ITEM-LIST.ADMIN_NOTES'
+      text: 'Factura Interna'
 
     },
     {
-      text: 'ADMINISTRATION.ITEM-LIST.ADMIN_SCHEDULE'
+      text: 'Recibo de Indemnización'
     },
     {
-      text: 'ADMINISTRATION.ITEM-LIST.ADMIN_CONTACTS'
+      text: 'Nota de Débito a Contratista'
     },
     {
-      text: 'ADMINISTRATION.ITEM-LIST.ADMIN_WORKFLOW'
+      text: 'Nota de intimación a Aseguradora'
+    },
+    {
+      text: "Nota de Intimación a Causante"
     }
-  ];  constructor() {}
+  ];
+  
+  public menuItems = this._menuItems;  
+  constructor() {
+    this.searchInput.valueChanges
+    .pipe(
+      takeUntil(this._unsubscribe),
+      debounceTime(500),
+      distinctUntilChanged()
+    )
+    .subscribe( {
+      next: (value: string)=> {
+        this.menuItems = this._menuItems.filter( i =>{
+        return  i.text.toUpperCase().includes( value.toUpperCase() )
+       });
+      }
+    });
+  }
+
+  ngOnDestroy(): void {
+    this._unsubscribe.next();
+    this._unsubscribe.complete();
+  }
 }
