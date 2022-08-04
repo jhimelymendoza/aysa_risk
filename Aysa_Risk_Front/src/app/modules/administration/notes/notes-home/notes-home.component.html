@@ -1,7 +1,35 @@
-<p>notes-home works!</p>
+<nz-spin nzTip="Loading..." *ngIf="isLoading">
 
-<nz-card style="width:300px;">
-  <p>Card content</p>
-  <p>Card content</p>
-  <p>Card content</p>
-</nz-card>
+</nz-spin>
+<div fxLayout="column" fxFlex="100%" class="p-20" @fadeInOut  *ngIf="!isLoading" >
+
+    <div fxLayout="row"  fxLayoutAlign="center start" fxFlex="100%" style="margin-bottom: 35px;">
+      <nz-breadcrumb>
+          <nz-breadcrumb-item>Ajustes</nz-breadcrumb-item>
+          <nz-breadcrumb-item>
+              <a routerLink="/administracion">Administrar plantillas </a>
+          </nz-breadcrumb-item>
+          <nz-breadcrumb-item>Notas</nz-breadcrumb-item>
+      </nz-breadcrumb>   
+    </div>
+    <div  fxLayout="row" fxLayoutAlign="start center" class="main-container">
+      <i nz-icon nzType="icons:notes"></i>
+      <h1>
+          {{ 'ADMINISTRATION.NOTES.ADMIN_NOTES' | translate}}
+      </h1>
+    </div>
+    <div fxLayout="row" fxLayoutAlign="end center">
+        <nz-input-group style="width: 264px" nzAddOnAfterIcon="search">
+          <input style="height: 32px" type="text" [formControl]="searchInput" nz-input [placeholder]="'COMMON.KEYWORD_SEARCH' | translate" />
+        </nz-input-group>
+        <button nz-button nzType="primary" class="btn-new"><span class="sum">+</span> Nuevo</button>
+
+    </div>
+    <div fxLayout="row" fxFlex="100" fxLayoutAlign="start start" class="list-container">
+      <div fxLayout="column" fxFlex="50" fxFlex.lt-sm="100" fxLayoutAlign="start start" >
+          <aysr-item-list *ngFor="let item of notes"
+          [text]="item.text"
+         [useTranslate]="false" ></aysr-item-list>
+      </div>
+  </div>
+</div>
