@@ -14,6 +14,7 @@ import { NzIconModule } from 'ng-zorro-antd/icon';
 import { NzInputModule } from 'ng-zorro-antd/input';
 import { NzCardModule } from 'ng-zorro-antd/card';
 import { NzBreadCrumbModule } from 'ng-zorro-antd/breadcrumb';
+import { NzSpinModule } from 'ng-zorro-antd/spin';
 
 @NgModule({
   imports: [
@@ -29,6 +30,8 @@ import { NzBreadCrumbModule } from 'ng-zorro-antd/breadcrumb';
     NzInputModule,
     NzButtonModule,
     NzBreadCrumbModule,
+    NzSpinModule,
+
     ComponentsModule,
     RouterModule
   ],
