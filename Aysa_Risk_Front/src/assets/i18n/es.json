@@ -1,4 +1,3 @@
-
 {
   "COMMON": {
     "REQUIRED_FIELD": "Campo requerido",
@@ -17,18 +16,20 @@
     "ENTERPRISE_LOAD_ERROR": "No se cargaron correctamente las empresas",
     "CREDENTIAL_INVALID": "Usuario o contraseña incorrecta"
   },
-  "ADMINISTRATION":{
-    "TITLE":"RISK CLOUD",
-    "SUB_TITLE":"Te damos la bienvenida a la consola de Administración y Parametrización",
-    "ITEM-LIST":{
+  "ADMINISTRATION": {
+    "TITLE": "RISK CLOUD",
+    "SUB_TITLE": "Te damos la bienvenida a la consola de Administración y Parametrización",
+    "ITEM-LIST": {
       "ADMIN_EMAIL_TEMPLATES": "Administrar las plantillas de Mails",
       "ADMIN_ALERTS": "Administrar la configuración de Alertas",
-      "ADMIN_NOTES":  "Administrar las Notas",
+      "ADMIN_NOTES": "Administrar las Notas",
       "ADMIN_SCHEDULE": "Administrar la Agenda",
       "ADMIN_CONTACTS": "Administrar la lista de contactos",
       "ADMIN_WORKFLOW": "Administrar Workflow de aprobación"
     },
-    "ADMIN_NOTES":"Administrar las Notas"         
+    "NOTES": {
+      "ADMIN_NOTES": "Administrar las Notas",
+      "NEW_NOTE": "Nueva nota"
+    }
   }
-
 }

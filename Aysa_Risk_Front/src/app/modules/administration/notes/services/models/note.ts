@@ -4,6 +4,6 @@ export class Note {
 
   constructor(option?: any) {
     this.id = option.id ?? 0;
-    this.text = option?.label ?? '';
+    this.text = option?.text ?? '';
   }
 }

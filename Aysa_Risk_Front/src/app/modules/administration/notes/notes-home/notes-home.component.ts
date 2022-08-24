@@ -40,7 +40,7 @@ export class NotesHomeComponent implements OnDestroy, OnInit {
           this.notes = this._notes!;
           this.isLoading = false;
         },
-        (_) => {
+        () => {
           //TODO: Manage Error
         }
       );

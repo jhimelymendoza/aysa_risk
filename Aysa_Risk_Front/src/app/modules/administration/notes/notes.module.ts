@@ -14,6 +14,9 @@ import { NzIconModule } from 'ng-zorro-antd/icon';
 import { NzInputModule } from 'ng-zorro-antd/input';
 import { NzCardModule } from 'ng-zorro-antd/card';
 import { NzBreadCrumbModule } from 'ng-zorro-antd/breadcrumb';
+import { NotesDetailComponent } from './notes-detail/notes-detail.component';
+import { NzSelectModule } from 'ng-zorro-antd/select';
+import { AngularEditorModule } from '@kolkov/angular-editor';
 import { NzSpinModule } from 'ng-zorro-antd/spin';
 
 @NgModule({
@@ -31,12 +34,12 @@ import { NzSpinModule } from 'ng-zorro-antd/spin';
     NzButtonModule,
     NzBreadCrumbModule,
     NzSpinModule,
-
-    ComponentsModule,
-    RouterModule
+    NzSelectModule,
+    AngularEditorModule,
+    ComponentsModule
   ],
   exports: [],
-  declarations: [NotesHomeComponent, NotesLayoutComponent],
+  declarations: [NotesHomeComponent, NotesLayoutComponent, NotesDetailComponent],
   providers: []
 })
 export class NotesModule {}

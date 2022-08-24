@@ -39,8 +39,8 @@ export class NotesService {
   ];
 
   getNotes(): Observable<ResponseBase<Array<Note>>> {
-    return of(this._mockNotes).pipe(
-      delay(1000),
+    return of({ result: this._mockNotes }).pipe(
+      delay(300),
       map((response) => {
         const notesResponse = new ResponseBase<Array<Note>>(response, Note);
         if (notesResponse.AnyError) {
