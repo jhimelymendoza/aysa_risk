@@ -1,15 +1,21 @@
 import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
+import { RouterModule, Routes } from '@angular/router';
 import { FormComponent } from './form/form.component';
+import { ModalsComponent } from './modals/modals.component';
+import { ToolDevLayoutComponent } from './tool-dev-layout/tool-dev-layout.component';
 
 const routes: Routes = [
   {
     path: '',
-    component: FormComponent,
+    component: ToolDevLayoutComponent,
     children: [
       {
         path: 'forms',
         component: FormComponent
+      },
+      {
+        path: 'modals',
+        component: ModalsComponent
       }
     ]
   }

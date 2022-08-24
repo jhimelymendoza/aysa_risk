@@ -123,6 +123,7 @@ nz-content {
 }
 
 .menu {
+  height: calc(100% - 150px);
   li {
     &.ant-menu-item-selected {
       background-color: @normal-color;
@@ -136,9 +137,8 @@ nz-content {
       color: gray;
     }
     &.setting{
-      //margin-top: calc(100% - 98px);
-      margin-bottom: 20px;
-      transition: none;
+      position: relative;
+      top: calc(100% - 350px);
     }
 
     &.setting.is-collapse {

@@ -10,7 +10,7 @@ import { fadeInOut } from 'src/app/core/animations';
   animations: [fadeInOut]
 })
 export class NotesHomeComponent implements OnDestroy {
-  searchInput: FormControl = new FormControl()
+  searchInput: FormControl = new FormControl();
   private _unsubscribe: Subject<void> = new Subject();
   private _menuItems = [
     {
@@ -21,7 +21,6 @@ export class NotesHomeComponent implements OnDestroy {
     },
     {
       text: 'Factura Interna'
-
     },
     {
       text: 'Recibo de Indemnización'
@@ -33,25 +32,21 @@ export class NotesHomeComponent implements OnDestroy {
       text: 'Nota de intimación a Aseguradora'
     },
     {
-      text: "Nota de Intimación a Causante"
+      text: 'Nota de Intimación a Causante'
     }
   ];
-  
-  public menuItems = this._menuItems;  
+
+  public menuItems = this._menuItems;
   constructor() {
     this.searchInput.valueChanges
-    .pipe(
-      takeUntil(this._unsubscribe),
-      debounceTime(500),
-      distinctUntilChanged()
-    )
-    .subscribe( {
-      next: (value: string)=> {
-        this.menuItems = this._menuItems.filter( i =>{
-        return  i.text.toUpperCase().includes( value.toUpperCase() )
-       });
-      }
-    });
+      .pipe(takeUntil(this._unsubscribe), debounceTime(500), distinctUntilChanged())
+      .subscribe({
+        next: (value: string) => {
+          this.menuItems = this._menuItems.filter((i) => {
+            return i.text.toUpperCase().includes(value.toUpperCase());
+          });
+        }
+      });
   }
 
   ngOnDestroy(): void {

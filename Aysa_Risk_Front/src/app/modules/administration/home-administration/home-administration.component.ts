@@ -5,7 +5,7 @@ import { fadeInOut } from 'src/app/core/animations';
   selector: 'aysr-home-administration',
   templateUrl: './home-administration.component.html',
   styleUrls: ['./home-administration.component.less'],
-  animations: [ fadeInOut  ]
+  animations: [fadeInOut]
 })
 export class HomeAdministrationComponent {
   public menuItems = [

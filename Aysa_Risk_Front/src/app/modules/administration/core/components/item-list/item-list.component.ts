@@ -7,9 +7,9 @@ import { fadeInOut } from 'src/app/core/animations';
   styleUrls: ['./item-list.component.less'],
   animations: [fadeInOut]
 })
-export class ItemListComponent{
+export class ItemListComponent {
   @Input() text = '';
   @Input() icon: string | undefined;
   @Input() link!: string | undefined;
-  @Input() useTranslate: boolean = true;
+  @Input() useTranslate = true;
 }

@@ -11,9 +11,11 @@ import { DevToolRoutingModule } from './dev-tool-routing.module';
 import { ToolDevLayoutComponent } from './tool-dev-layout/tool-dev-layout.component';
 import { RouterModule } from '@angular/router';
 import { FormComponent } from './form/form.component';
+import { NzModalModule } from 'ng-zorro-antd/modal';
+import { ModalsComponent } from './modals/modals.component';
 
 @NgModule({
-  declarations: [ToolDevLayoutComponent, FormComponent],
+  declarations: [ToolDevLayoutComponent, FormComponent, ModalsComponent],
   imports: [
     CommonModule,
     NzInputModule,
@@ -25,7 +27,8 @@ import { FormComponent } from './form/form.component';
     NzButtonModule,
     NzSelectModule,
     NzTypographyModule,
-    DevToolRoutingModule
+    DevToolRoutingModule,
+    NzModalModule
   ],
   exports: []
 })
