@@ -27,6 +27,9 @@
       "ADMIN_CONTACTS": "Administrar la lista de contactos",
       "ADMIN_WORKFLOW": "Administrar Workflow de aprobación"
     },
-    "ADMIN_NOTES": "Administrar las Notas"
+    "NOTES": {
+      "ADMIN_NOTES": "Administrar las Notas",
+      "NEW_NOTE": "Nueva nota"
+    }
   }
 }

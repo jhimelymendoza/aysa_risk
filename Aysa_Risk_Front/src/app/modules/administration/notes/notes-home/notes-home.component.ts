@@ -1,7 +1,9 @@
-import { Component, OnDestroy } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
-import { debounceTime, delay, distinctUntilChanged, Subject, takeUntil } from 'rxjs';
+import { debounceTime, distinctUntilChanged, Subject, takeUntil } from 'rxjs';
 import { fadeInOut } from 'src/app/core/animations';
+import { Note } from '../services/models';
+import { NotesService } from '../services/notes.service';
 
 @Component({
   selector: 'aysr-notes-home',
@@ -9,44 +11,39 @@ import { fadeInOut } from 'src/app/core/animations';
   styleUrls: ['./notes-home.component.less'],
   animations: [fadeInOut]
 })
-export class NotesHomeComponent implements OnDestroy {
+export class NotesHomeComponent implements OnDestroy, OnInit {
   searchInput: FormControl = new FormControl();
   private _unsubscribe: Subject<void> = new Subject();
-  private _menuItems = [
-    {
-      text: 'Nota de Ofrecimiento'
-    },
-    {
-      text: 'Nota de Rechazo'
-    },
-    {
-      text: 'Factura Interna'
-    },
-    {
-      text: 'Recibo de Indemnización'
-    },
-    {
-      text: 'Nota de Débito a Contratista'
-    },
-    {
-      text: 'Nota de intimación a Aseguradora'
-    },
-    {
-      text: 'Nota de Intimación a Causante'
-    }
-  ];
+  private _notes: Array<Note> = [];
+  public notes: Array<Note> = [];
+  isLoading = true;
 
-  public menuItems = this._menuItems;
-  constructor() {
+  constructor(private _notesService: NotesService) {
     this.searchInput.valueChanges
       .pipe(takeUntil(this._unsubscribe), debounceTime(500), distinctUntilChanged())
       .subscribe({
         next: (value: string) => {
-          this.menuItems = this._menuItems.filter((i) => {
+          this.notes = this._notes.filter((i) => {
             return i.text.toUpperCase().includes(value.toUpperCase());
           });
         }
       });
+  }
+
+  ngOnInit(): void {
+    this._notesService
+      .getNotes()
+      .pipe(takeUntil(this._unsubscribe))
+      .subscribe(
+        (response) => {
+          this._notes = response.result!;
+          this.notes = this._notes!;
+          this.isLoading = false;
+        },
+        () => {
+          //TODO: Manage Error
+        }
+      );
   }
 
   ngOnDestroy(): void {

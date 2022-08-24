@@ -1,7 +1,7 @@
-<a fxLayout="column" fxFlex="100" fxLayoutAlign="start start" @fadeInOut >
-    <div fxLayout="row" fxFlex="100" fxLayoutAlign="start center"  
-    class="item-list">
-        <i nz-icon [nzType]="'icons:'+icon" *ngIf="icon"></i>
-        <span class="description" [class.icon]="icon" routerLink="{{link}}"> {{useTranslate ?( text | translate) : text}}</span>
-    </div>
+<a fxLayout="column" fxFlex="100" fxLayoutAlign="start start"  routerLink="{{link}}" @fadeInOut >
+  <div fxLayout="row" fxFlex="100" fxLayoutAlign="start center"
+       class="item-list">
+    <i nz-icon [nzType]="'icons:'+icon" *ngIf="icon"></i>
+    <span class="description" [class.icon]="icon"> {{useTranslate ?( text | translate) : text}}</span>
+  </div>
 </a>
